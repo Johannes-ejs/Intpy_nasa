@@ -1,21 +1,25 @@
-import numpy as np
-import sys
-from intpy.intpy import initialize_intpy, deterministic
+#exp1_fibonacci_recursive.py
+
 import time
+import sys
+
+from intpy.intpy import initialize_intpy, deterministic
+
 
 @deterministic
-def matrix_multiplication(A, B):
-    return np.dot(A,B)
+def fib(n):
+    if n < 2:
+        return n
+    return fib(n-1) + fib(n-2)
 
 
 @initialize_intpy(__file__)
 def main(n):
-    A = np.random.rand(n, n) 
-    B = np.random.rand(n, n)
-    matrix_multiplication(A, B)
+    print(fib(n))
+
 
 if __name__ == "__main__":
-    N = int(sys.argv[1])
+    n = int(sys.argv[1])
     start = time.perf_counter()
-    main(N)
+    main(n)
     print(time.perf_counter()-start)
