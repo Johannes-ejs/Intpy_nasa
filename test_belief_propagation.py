@@ -4,7 +4,7 @@ from intpy.intpy import initialize_intpy, deterministic
 import time
 
 
-#@deterministic
+@deterministic
 def f(A,x):
     x0 = np.log(np.dot(A, np.exp(x)))
     x0 -= np.log(np.sum(np.exp(x0)))
@@ -19,7 +19,7 @@ def belief_propagation(N):
     return x
 
 
-#@initialize_intpy(__file__)
+@initialize_intpy(__file__)
 def main(n):    
     belief_propagation(n)
 
