@@ -3,12 +3,12 @@ import sys
 from intpy.intpy import initialize_intpy, deterministic
 import time
 
-#@deterministic
+@deterministic
 def matrix_multiplication(A, B):
     return np.dot(A,B)
 
 
-#@initialize_intpy(__file__)
+@initialize_intpy(__file__)
 def main(n):
     A = np.random.rand(n, n) 
     B = np.random.rand(n, n)
