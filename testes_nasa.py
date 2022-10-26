@@ -3,7 +3,7 @@
 import time
 import sys
 
-from intpy import initialize_intpy, deterministic
+from intpy.intpy import initialize_intpy, deterministic
 
 
 @deterministic
